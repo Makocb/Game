@@ -1,6 +1,6 @@
-﻿  debree.cpp
-  Game.cpp
-  Input.cpp
-  Generating Code...
-D:\repos\debree\debree.cpp(4,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
+﻿  AnimatedSprite.cpp
+D:\repos\debree\AnimatedSprite.h(7,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
+D:\repos\debree\AnimatedSprite.cpp(54,25): warning C4018:  '<': signed/unsigned mismatch
+D:\repos\debree\AnimatedSprite.cpp(72,48): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+D:\repos\debree\AnimatedSprite.cpp(73,48): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
   debree.vcxproj -> D:\repos\debree\Debug\debree.exe
