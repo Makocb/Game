@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <iostream>
 //#include <SDL_image.h>
 
 #include <algorithm>
@@ -12,7 +13,7 @@
 
 namespace {
 	const int FPS = 100;
-	const int MAX_FRAME_TIME = 5 * 1000 / FPS;
+	const int MAX_FRAME_TIME = 5*1000;//5* 1000 / FPS;
 }
 
 Game::Game() {
@@ -29,9 +30,7 @@ void Game::gameLoop() {
 	Graphics graphics;
 	Input input;
 	SDL_Event event;
-	this->_player = AnimatedSprite(graphics, "sprites/med.png", 0, 0, 235, 300, 100, 100, 300);
-	this->_player.setupAnimations();
-	this->_player.playAnimation("RunDown");
+	this->_player = Player(graphics, 100, 100);
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 
@@ -53,6 +52,24 @@ void Game::gameLoop() {
 		if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE) == true) {
 			return;
 		}
+		else if (input.wasKeyHeld(SDL_SCANCODE_LEFT) == true) {
+			this->_player.moveLeft();
+		}
+		else if (input.wasKeyHeld(SDL_SCANCODE_RIGHT) == true) {
+			this->_player.moveRight();
+		}
+		else if (input.wasKeyHeld(SDL_SCANCODE_UP) == true) {
+			this->_player.moveUp();
+		}
+		else if (input.wasKeyHeld(SDL_SCANCODE_DOWN) == true) {
+			this->_player.moveDown();
+		}
+
+		if (!input.wasKeyHeld(SDL_SCANCODE_LEFT) && !input.wasKeyHeld(SDL_SCANCODE_RIGHT)&&!input.wasKeyHeld(SDL_SCANCODE_UP) && !input.wasKeyHeld(SDL_SCANCODE_DOWN)) {
+			this->_player.stopMoving();
+		}
+		
+		SDL_Delay(1);
 		const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
 		this->update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
@@ -65,7 +82,7 @@ void Game::gameLoop() {
 void Game:: draw(Graphics& graphics) {
 	graphics.clear();
 
-	this->_player.draw(graphics, 100, 100);
+	this->_player.draw(graphics);
 
 	graphics.flip();
 }

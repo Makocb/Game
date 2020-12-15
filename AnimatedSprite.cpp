@@ -83,6 +83,9 @@ void AnimatedSprite:: animationDone(std::string currentAnimation) {
 }
 
 void AnimatedSprite::setupAnimations() {
-	this->addAnimation(4, 0, 0, "RunDown", 240, 300, Vector2D(0, 0));
+	/*this->addAnimation(4, 0, 0, "RunDown", 240, 300, Vector2D(0, 0));
+	this->addAnimation(4, 10, 630, "RunLeft", 190, 930, Vector2D(0, 0));
+	this->addAnimation(4, 1020, 0, "RunUp", 1260, 310, Vector2D(0, 0));
+	this->addAnimation(4, 0, 310, "RunRight", 180, 610, Vector2D(0, 0));*/
 }
 

@@ -163,6 +163,7 @@
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +172,7 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Sprite.h" />
   </ItemGroup>
   <ItemGroup>

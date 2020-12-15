@@ -6,6 +6,13 @@ namespace  globals{
 	const float SPRITE_SCALE = 0.5f;
 }
 
+enum Direction {
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+};
+
 struct Vector2D {
 	int x, y;
 	Vector2D() : x(0), y(0){}
